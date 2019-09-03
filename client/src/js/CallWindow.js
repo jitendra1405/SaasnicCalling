@@ -137,7 +137,7 @@ startTimer(duration, display) {
 
 <span id="time"></span>
 </div>
-
+<div class="start-screen-recording recording-style-black"><div><div class="rec-dot"></div><span>Record</span></div></div><script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
 {this.renderControlButtons()}
           <button
             type="button"
