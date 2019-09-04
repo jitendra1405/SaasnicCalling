@@ -45,7 +45,7 @@ function stopRecordingCallback(blob) {
     
     
     
-  }
+  
 
   componentDidMount() {
     this.setMediaStream();
