@@ -158,7 +158,7 @@ startTimer(duration, display) {
          <div id="div"></div><br>
 <video id="video" height="120" width="160" autoplay></video>
 <a id="link"></a>
-        </div>
+        
       </div>
     );
   }
