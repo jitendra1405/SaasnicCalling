@@ -26,8 +26,7 @@ class CallWindow extends Component {
       { type: 'Video', icon: 'fa-video-camera' },
       { type: 'Audio', icon: 'fa-microphone' }
     ];
-   var recorder = new RecordRTC_Extension();
-   var video = document.querySelector('video');
+   
     
 /*   function record(){
 if(typeof RecordRTC_Extension === 'undefined') {
