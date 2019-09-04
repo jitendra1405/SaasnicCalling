@@ -13,33 +13,7 @@ var mins = Math.floor((remainingTime/1000)/60);
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
             //new code
-var constraints = { video: { mediaSource: "screen", width: 320, height: 200 } };
 
-var start = ms => navigator.mediaDevices.getUserMedia(constraints)
-  .then(stream => record(stream, ms)
-    .then(recording => {
-      stop(stream);
-      video.src = link.href = URL.createObjectURL(new Blob(recording));
-      link.download = "recording.blob";
-      link.innerHTML = "Download blob";
-      log("Playing "+ recording[0].type +" recording:");
-    })
-    .catch(log).then(() => stop(stream)))
-  .catch(log);
-
-var record = (stream, ms) => {
-  var rec = new MediaRecorder(stream), data = [];
-  rec.ondataavailable = e => data.push(e.data);
-  rec.start();
-  log(rec.state + " for "+ (ms / 1000) +" seconds...");
-  var stopped = new Promise((r, e) => (rec.onstop = r, rec.onerror = e));
-  return Promise.all([stopped, wait(ms).then(() => rec.stop())])
-    .then(() => data);
-};
-
-var stop = stream => stream.getTracks().forEach(track => track.stop());
-var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-var log = msg => div.innerHTML += "<br>" + msg;
 //=========================================================
 class CallWindow extends Component {
   constructor(props) {
@@ -99,6 +73,38 @@ startTimer(duration, display) {
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
+  
+ record(){
+   var constraints = { video: { mediaSource: "screen", width: 320, height: 200 } };
+
+var start = ms => navigator.mediaDevices.getUserMedia(constraints)
+  .then(stream => record(stream, ms)
+    .then(recording => {
+      stop(stream);
+      video.src = link.href = URL.createObjectURL(new Blob(recording));
+      link.download = "recording.blob";
+      link.innerHTML = "Download blob";
+      log("Playing "+ recording[0].type +" recording:");
+    })
+    .catch(log).then(() => stop(stream)))
+  .catch(log);
+
+var record = (stream, ms) => {
+  var rec = new MediaRecorder(stream), data = [];
+  rec.ondataavailable = e => data.push(e.data);
+  rec.start();
+  log(rec.state + " for "+ (ms / 1000) +" seconds...");
+  var stopped = new Promise((r, e) => (rec.onstop = r, rec.onerror = e));
+  return Promise.all([stopped, wait(ms).then(() => rec.stop())])
+    .then(() => data);
+};
+
+var stop = stream => stream.getTracks().forEach(track => track.stop());
+var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+var log = msg => div.innerHTML += "<br>" + msg;
+ }
+  
+  
 
   componentDidUpdate() {
     this.setMediaStream();
@@ -144,6 +150,7 @@ startTimer(duration, display) {
       
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
+       <video id="video" height="120" width="160" autoplay></video>
         <div className="video-control">
 <div id="timer">
 
@@ -155,11 +162,16 @@ startTimer(duration, display) {
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
+         <button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.record()}
+          />
         </div>
       </div>
      
-<video id="video" height="120" width="160" autoplay></video>
-<a id="link"></a>
+
+
 
     );
   }
