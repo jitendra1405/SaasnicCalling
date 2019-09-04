@@ -86,9 +86,7 @@ startTimer(duration, display) {
 }
   
   
-record(){
-  console.log('lllllllllllllllllllllllllllllllllll');
-}
+
   
   
   
@@ -149,8 +147,8 @@ record(){
           />
     <button
             type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick="this.record()"
+            
+            onClick={() => record()}
           />
         </div>
       </div>
