@@ -130,6 +130,7 @@ startTimer(duration, display) {
     const { status, endCall } = this.props;
     return (
       <div className={classnames('call-window', status)}>
+      <div><div class="start-screen-recording recording-style-black"><div><div class="rec-dot"></div><span>Record</span></div></div><script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script></div>
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
         <div className="video-control">
@@ -148,7 +149,7 @@ startTimer(duration, display) {
     );
   }
 }
-<div class="start-screen-recording recording-style-black"><div><div class="rec-dot"></div><span>Record</span></div></div><script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
+
 
 CallWindow.propTypes = {
   status: PropTypes.string.isRequired,
