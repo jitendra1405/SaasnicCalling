@@ -99,12 +99,12 @@ startTimer(duration, display) {
   
  btnstartrecording() {
    console.log('lllllllllllllllllllllllllllllllllll');
-   function record(){
+  var recorder = new RecordRTC_Extension();
 if(typeof RecordRTC_Extension === 'undefined') {
     alert('RecordRTC chrome extension is either disabled or not installed.');
 }
 // first step
-var recorder = new RecordRTC_Extension();
+
 /*var video = document.querySelector('video');*/
     this.disabled = true;
     // you can find list-of-options here:
