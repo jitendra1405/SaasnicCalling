@@ -98,7 +98,7 @@ startTimer(duration, display) {
 }
   
  btnstartrecording() {
-   console.log('lllllllllllllllllllllllllllllllllll');
+   
   
 if(typeof RecordRTC_Extension === 'undefined') {
     alert('RecordRTC chrome extension is either disabled or not installed.');
@@ -182,6 +182,11 @@ btnstoprecording(){
             type="button"
             
             onClick={() => this.btnstartrecording()}
+          />
+      <button
+            type="button"
+            
+            onClick={() => this.btnstoprecording(){
           />
         </div>
       </div>
