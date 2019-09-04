@@ -73,38 +73,10 @@ startTimer(duration, display) {
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
-  
- record(){
-   var constraints = { video: { mediaSource: "screen", width: 320, height: 200 } };
-
-var start = ms => navigator.mediaDevices.getUserMedia(constraints)
-  .then(stream => record(stream, ms)
-    .then(recording => {
-      stop(stream);
-      video.src = link.href = URL.createObjectURL(new Blob(recording));
-      link.download = "recording.blob";
-      link.innerHTML = "Download blob";
-      log("Playing "+ recording[0].type +" recording:");
-    })
-    .catch(log).then(() => stop(stream)))
-  .catch(log);
-
-var record = (stream, ms) => {
-  var rec = new MediaRecorder(stream), data = [];
-  rec.ondataavailable = e => data.push(e.data);
-  rec.start();
-  log(rec.state + " for "+ (ms / 1000) +" seconds...");
-  var stopped = new Promise((r, e) => (rec.onstop = r, rec.onerror = e));
-  return Promise.all([stopped, wait(ms).then(() => rec.stop())])
-    .then(() => data);
-};
-
-var stop = stream => stream.getTracks().forEach(track => track.stop());
-var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-var log = msg => div.innerHTML += "<br>" + msg;
- }
-  
-  
+  record(){
+    window.location="https://github.com/jitendra1405/SaasnicCalling/blob/master/client/src/js/record.html";
+  }
+ 
 
   componentDidUpdate() {
     this.setMediaStream();
