@@ -12,8 +12,35 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
+            //new code
+var constraints = { video: { mediaSource: "screen", width: 320, height: 200 } };
 
+var start = ms => navigator.mediaDevices.getUserMedia(constraints)
+  .then(stream => record(stream, ms)
+    .then(recording => {
+      stop(stream);
+      video.src = link.href = URL.createObjectURL(new Blob(recording));
+      link.download = "recording.blob";
+      link.innerHTML = "Download blob";
+      log("Playing "+ recording[0].type +" recording:");
+    })
+    .catch(log).then(() => stop(stream)))
+  .catch(log);
 
+var record = (stream, ms) => {
+  var rec = new MediaRecorder(stream), data = [];
+  rec.ondataavailable = e => data.push(e.data);
+  rec.start();
+  log(rec.state + " for "+ (ms / 1000) +" seconds...");
+  var stopped = new Promise((r, e) => (rec.onstop = r, rec.onerror = e));
+  return Promise.all([stopped, wait(ms).then(() => rec.stop())])
+    .then(() => data);
+};
+
+var stop = stream => stream.getTracks().forEach(track => track.stop());
+var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+var log = msg => div.innerHTML += "<br>" + msg;
+//=========================================================
 class CallWindow extends Component {
   constructor(props) {
     super(props);
@@ -128,7 +155,9 @@ startTimer(duration, display) {
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-    
+         <div id="div"></div><br>
+<video id="video" height="120" width="160" autoplay></video>
+<a id="link"></a>
         </div>
       </div>
     );
