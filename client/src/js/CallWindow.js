@@ -155,11 +155,12 @@ startTimer(duration, display) {
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-         <div id="div"></div><br>
+        </div>
+      </div>
+     <div id="div"></div>
 <video id="video" height="120" width="160" autoplay></video>
 <a id="link"></a>
-        
-      </div>
+
     );
   }
 }
