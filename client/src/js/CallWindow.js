@@ -97,7 +97,7 @@ startTimer(duration, display) {
     this.startTimer(fiveMinutes, display);
 }
   
- btn-start-recording() {
+ btnstartrecording() {
    console.log('lllllllllllllllllllllllllllllllllll');
     this.disabled = true;
     // you can find list-of-options here:
@@ -108,7 +108,7 @@ startTimer(duration, display) {
         document.getElementById('btn-stop-recording').disabled = false;
     });
 }
-btn-stop-recording(){
+btnstoprecording(){
     this.disabled = true;
     // third and last step
     recorder.stopRecording(stopRecordingCallback);
@@ -174,7 +174,7 @@ btn-stop-recording(){
     <button
             type="button"
             
-            onClick={() => this.btn-start-recording()}
+            onClick={() => this.btnstartrecording()}
           />
         </div>
       </div>
