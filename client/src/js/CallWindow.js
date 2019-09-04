@@ -85,7 +85,10 @@ startTimer(duration, display) {
     this.startTimer(fiveMinutes, display);
 }
   
-  
+ record(){
+  console.log('lllllllllllllllllllllllllllllllllll');
+}
+ 
 
   
   
@@ -148,7 +151,7 @@ startTimer(duration, display) {
     <button
             type="button"
             
-            onClick={() => record()}
+            onClick={() => this.record()}
           />
         </div>
       </div>
