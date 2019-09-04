@@ -12,7 +12,8 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-
+var recorder = new RecordRTC_Extension();
+var video = document.querySelector('video');
 
 class CallWindow extends Component {
   constructor(props) {
@@ -27,7 +28,18 @@ class CallWindow extends Component {
       { type: 'Audio', icon: 'fa-microphone' }
     ];
     
-   
+/*   function record(){
+if(typeof RecordRTC_Extension === 'undefined') {
+    alert('RecordRTC chrome extension is either disabled or not installed.');
+}
+// first step
+
+function stopRecordingCallback(blob) {
+    video.src = video.srcObject = null;
+    video.src = URL.createObjectURL(blob);
+    recorder = null;
+}*/
+}
 
     
     
@@ -85,11 +97,22 @@ startTimer(duration, display) {
     this.startTimer(fiveMinutes, display);
 }
   
- record(){
-  console.log('lllllllllllllllllllllllllllllllllll');
+ btn-start-recording() {
+   console.log('lllllllllllllllllllllllllllllllllll');
+    this.disabled = true;
+    // you can find list-of-options here:
+    // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
+    var options = recorder.getSupoortedFormats()[1];
+    // second step
+    recorder.startRecording(options, function() {
+        document.getElementById('btn-stop-recording').disabled = false;
+    });
 }
- 
-
+btn-stop-recording(){
+    this.disabled = true;
+    // third and last step
+    recorder.stopRecording(stopRecordingCallback);
+}
   
   
   
@@ -151,7 +174,7 @@ startTimer(duration, display) {
     <button
             type="button"
             
-            onClick={() => this.record()}
+            onClick={() => this.btn-start-recording()}
           />
         </div>
       </div>
