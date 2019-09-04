@@ -118,7 +118,7 @@ startTimer(duration, display) {
     const { status, endCall } = this.props;
     return (
       <div className={classnames('call-window', status)}>
-      
+      <script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
       
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
