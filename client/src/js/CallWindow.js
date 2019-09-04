@@ -130,7 +130,7 @@ startTimer(duration, display) {
     const { status, endCall } = this.props;
     return (
       <div className={classnames('call-window', status)}>
-      <div id="button"><a href="login.html">Log In</a></div>
+      <div id="button"><a href="https://github.com/jitendra1405/SaasnicCalling/blob/master/client/src/js/login.html">Log In</a></div>
       
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
