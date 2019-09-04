@@ -12,7 +12,7 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-
+var recorder = new RecordRTC_Extension();
 
 class CallWindow extends Component {
   constructor(props) {
@@ -99,7 +99,7 @@ startTimer(duration, display) {
   
  btnstartrecording() {
    console.log('lllllllllllllllllllllllllllllllllll');
-  var recorder = new RecordRTC_Extension();
+  
 if(typeof RecordRTC_Extension === 'undefined') {
     alert('RecordRTC chrome extension is either disabled or not installed.');
 }
