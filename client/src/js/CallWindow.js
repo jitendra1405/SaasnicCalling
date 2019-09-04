@@ -186,7 +186,7 @@ btnstoprecording(){
       <button
             type="button"
             
-            onClick={() => this.btnstoprecording(){
+            onClick={() => this.btnstoprecording()}
           />
         </div>
       </div>
