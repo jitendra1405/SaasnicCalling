@@ -87,12 +87,7 @@ startTimer(duration, display) {
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
-stopRecordingCallback(blob) {
-  var video = document.querySelector('video');
-    video.src = video.srcObject = null;
-    video.src = URL.createObjectURL(blob);
-    recorder = null;
-}  
+
   
  btnstartrecording() {
    
@@ -116,7 +111,7 @@ btnstoprecording(){
   var recorder = new RecordRTC_Extension();
     this.disabled = true;
     // third and last step
-    recorder.stopRecording(this.stopRecordingCallback());
+    recorder.stopRecording(null);
 }
   
   
