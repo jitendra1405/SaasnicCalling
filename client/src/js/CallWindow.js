@@ -134,11 +134,7 @@ startTimer(duration, display) {
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-         <button
-            type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick={() => this.record()}
-          />
+         <div class="start-screen-recording recording-style-black">Record</div>
         </div>
       </div>
      
