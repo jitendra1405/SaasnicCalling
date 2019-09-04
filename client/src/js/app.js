@@ -70,7 +70,9 @@ endCall(isStarter) {
     });
   }
  
-
+record(){
+  console.log('lllllllllllllllllllllllllllllllllll');
+}
 
   render() {
     const { clientId, callFrom, callModal, callWindow, localSrc, peerSrc } = this.state;
