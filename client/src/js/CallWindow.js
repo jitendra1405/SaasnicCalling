@@ -73,9 +73,7 @@ startTimer(duration, display) {
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
-  record(){
-    window.location="https://github.com/jitendra1405/SaasnicCalling/blob/master/client/src/js/record.html";
-  }
+ 
  
 
   componentDidUpdate() {
@@ -134,7 +132,7 @@ startTimer(duration, display) {
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-         <div class="start-screen-recording recording-style-black">Record</div>
+         
         </div>
       </div>
      
