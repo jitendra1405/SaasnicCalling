@@ -28,17 +28,7 @@ class CallWindow extends Component {
     ];
    
     
-/*   function record(){
-if(typeof RecordRTC_Extension === 'undefined') {
-    alert('RecordRTC chrome extension is either disabled or not installed.');
-}
-// first step
 
-function stopRecordingCallback(blob) {
-    video.src = video.srcObject = null;
-    video.src = URL.createObjectURL(blob);
-    recorder = null;
-}*/
 }
 
     
@@ -92,10 +82,17 @@ startTimer(duration, display) {
 }
 
   abc(){
+    
     var fiveMinutes = 60 * .5,
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
+stopRecordingCallback(blob) {
+  var video = document.querySelector('video');
+    video.src = video.srcObject = null;
+    video.src = URL.createObjectURL(blob);
+    recorder = null;
+}  
   
  btnstartrecording() {
    
@@ -119,7 +116,7 @@ btnstoprecording(){
   var recorder = new RecordRTC_Extension();
     this.disabled = true;
     // third and last step
-    recorder.stopRecording(stopRecordingCallback);
+    recorder.stopRecording(this.stopRecordingCallback());
 }
   
   
@@ -168,6 +165,7 @@ btnstoprecording(){
       
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
+        <video id="video" controls autoplay playsinline></video>
         <div className="video-control">
 <div id="timer">
 
