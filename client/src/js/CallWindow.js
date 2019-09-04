@@ -148,7 +148,7 @@ startTimer(duration, display) {
     );
   }
 }
-<div class="start-screen-recording recording-style-black"><div><div class="rec-dot"></div><span>Record</span></div></div><script type="text/javascript" src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
+<div class="start-screen-recording recording-style-black"><div><div class="rec-dot"></div><span>Record</span></div></div><script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
 
 CallWindow.propTypes = {
   status: PropTypes.string.isRequired,
