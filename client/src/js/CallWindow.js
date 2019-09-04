@@ -31,20 +31,9 @@ class CallWindow extends Component {
    
 }
 
-    
-    
-    
-    
-  }
-
   componentDidMount() {
     this.setMediaStream();
-    
-   
-    
-    
-    
-    
+ 
   }
 
   componentWillReceiveProps(nextProps) {
@@ -60,9 +49,7 @@ class CallWindow extends Component {
         Audio: config.audio
       });
     }
-    
-    
-    
+
   }
 startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -86,13 +73,7 @@ startTimer(duration, display) {
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
-  
- 
- 
 
-  
-  
-  
   componentDidUpdate() {
     this.setMediaStream();
   }
