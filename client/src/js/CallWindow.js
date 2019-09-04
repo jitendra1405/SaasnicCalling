@@ -130,9 +130,7 @@ startTimer(duration, display) {
     const { status, endCall } = this.props;
     return (
       <div className={classnames('call-window', status)}>
-      <form action="login.html">
-       <input type="submit" value="Go to Login">
-        </form>
+      <div id="button"><a href="login.html">Log In</a></div>
       
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
