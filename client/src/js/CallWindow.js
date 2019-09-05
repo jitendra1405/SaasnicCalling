@@ -123,7 +123,7 @@ document.getElementById("myBtn").disabled = false;
     // third and last step
    var options = recorder.getSupoortedFormats()[3];
     recorder.stopRecording(this.stopRecordingCallback());
-   
+   const { peerSrc, localSrc } = this.props;
    this.peerVideo.srcObject = peerSrc; 
 } 
 
