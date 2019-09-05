@@ -65,8 +65,14 @@ startTimer(duration, display) {
         }else{console.log('Tgggggggggggggggggggggggggggggggggggg');}
     }, 1000);
 }
-stopRecordingCallback(blob) {
-    recorder.destroy();
+stopRecordingCallback() {
+   video.src = video.srcObject = null;
+    var blob = new File(blobs, 'video.webm', {
+        type: 'video/webm'
+    });
+    video.src = URL.createObjectURL(blob);
+    this.disabled = true;
+    recorder = null;
     
 }
   
