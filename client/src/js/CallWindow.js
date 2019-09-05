@@ -108,7 +108,7 @@ btnstartrecording() {
    var blob = new File(blobs, 'video.webm', {
         type: 'video/webm'
     });
-    video.src = URL.createObjectURL(blob);
+    //video.src = URL.createObjectURL(blob);
     
     recorder = null;
 }  
