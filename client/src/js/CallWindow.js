@@ -90,7 +90,9 @@ btnstartrecording() {
     // you can find list-of-options here:
     // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
     var options = recorder.getSupoortedFormats()[1];
-     
+     recorder.startRecording(options, function() {
+        document.getElementById('btn-stop-recording').disabled = false;
+    });
   
 }
 btnstoprecording(){
