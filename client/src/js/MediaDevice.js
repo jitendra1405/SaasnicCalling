@@ -16,6 +16,11 @@ class MediaDevice extends Emitter {
       },
       audio: true
     };
+    start12() {
+    const constraints = {
+      video: false
+      audio: true
+    };
 
     navigator.mediaDevices
       .getUserMedia(constraints)
