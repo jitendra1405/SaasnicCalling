@@ -30,7 +30,7 @@ class MediaDevice extends Emitter {
           console.log(err);
         }
       });
-
+  }
   start12() {
     const constraints1 = {
       video: false,
