@@ -52,6 +52,7 @@ class App extends Component {
       .start(isCaller, config);
   }
   startCall12(isCaller, friendID, config) {
+    console.log('i am in start call 12');
     this.config = config;
     this.pc = new PeerConnection(friendID)
       .on('localStream', (src) => {
