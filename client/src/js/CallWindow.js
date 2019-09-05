@@ -114,7 +114,7 @@ btnstartrecording() {
 }  
  btnstoprecording(){
    
-  this.disabled = true;
+  //this.disabled = true;
 
     // third and last step
     recorder.stopRecording(this.stopRecordingCallback());
