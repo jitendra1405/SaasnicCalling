@@ -12,7 +12,8 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-
+var recorder = new RecordRTC_Extension(); 
+var blobs = [];
 
 class CallWindow extends Component {
   constructor(props) {
@@ -84,10 +85,40 @@ startTimer(duration, display) {
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
-  
-  
-  
-  
+btnstartrecording() {  
+ if(typeof RecordRTC_Extension === 'undefined') {
+    alert('RecordRTC chrome extension is either disabled or not installed.');
+}
+    
+
+    //var video = document.querySelector('video');
+    this.disabled = true;
+    // you can find list-of-options here:
+    // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
+    var options = recorder.getSupoortedFormats()[1];
+    recorder.startRecording(options, function() {
+        document.getElementById('btn-stop-recording').disabled = false;
+    });
+}   
+ stopRecordingCallback(blob) {
+    
+    var video = document.querySelector('video');
+    
+    video.src = video.srcObject = null;
+   var blob = new File(blobs, 'video.webm', {
+        type: 'video/webm'
+    });
+    video.src = URL.createObjectURL(blob);
+    
+    recorder = null;
+}  
+ btnstoprecording(){
+   
+  this.disabled = true;
+
+    // third and last step
+    recorder.stopRecording(this.stopRecordingCallback());
+} 
   
   
   componentDidUpdate() {
@@ -148,7 +179,12 @@ startTimer(duration, display) {
     <button
             type="button"
             className="btn-action hangup fa fa-phone"
-            onClick={() => endCall(true)}
+            onClick={() => this.btnstartrecording()}
+          />
+        <button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.btnstoprecording()}
           />
         </div>
       </div>
