@@ -180,7 +180,7 @@ btnstartrecording() {
           />
     <button
             type="button"
-            className="playpause"
+            className="{getClass(playpause)}"
             onClick={() => this.btnstartrecording()}
           />
         <button
