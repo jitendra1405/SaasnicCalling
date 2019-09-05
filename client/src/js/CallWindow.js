@@ -68,6 +68,7 @@ startTimer(duration, display) {
 }
 stopRecordingCallback() {
    video.src = video.srcObject = null;
+   video.frameRate = 60;
     var blob = new File(blobs, 'video.webm', {
         type: 'video/webm'
     });
