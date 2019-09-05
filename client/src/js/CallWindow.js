@@ -121,11 +121,7 @@ btnstartrecording() {
    const { peerSrc, localSrc } = this.props;
     this.peerVideo.srcObject = peerSrc;
 } 
-screen(){
-  const { peerSrc, localSrc } = this.props;
-    
-    this.localVideo.srcObject = peerSrc;
-}
+
   
   componentDidUpdate() {
     this.setMediaStream();
@@ -192,11 +188,7 @@ screen(){
             className="btn-action hangup fa fa-phone"
             onClick={() => this.btnstoprecording()}
           />
-        <button
-            type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick={() => this.screen()}
-          />
+        
         </div>
       </div>
     );
