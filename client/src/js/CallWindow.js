@@ -89,9 +89,22 @@ btnstartrecording() {
     // you can find list-of-options here:
     // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
     var options = recorder.getSupoortedFormats()[1];
-    recorder.startRecording(options, function() {
+     recorder = RecordRTC(camera, {
+            recorderType: MediaStreamRecorder,
+            mimeType: 'video/webm',
+            timeSlice: 100000, // pass this parameter
+            // getNativeBlob: true,
+            ondataavailable: function(blob) {
+                blobs.push(blob);
+
+                var size = 0;
+                blobs.forEach(function(b) {
+                    size += b.size;
+                });
+     recorder.startRecording(options, function() {
         document.getElementById('btnstoprecording').disabled = false;
     });
+  
 }
 btnstoprecording(){
    
