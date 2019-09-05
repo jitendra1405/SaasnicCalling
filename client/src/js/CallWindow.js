@@ -173,26 +173,7 @@ btnstartrecording() {
 <span id="time"></span>
 </div>
 {this.renderControlButtons()}
-<style>
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
 
-.button1 {border-radius: 2px;}
-.button2 {border-radius: 4px;}
-.button3 {border-radius: 8px;}
-.button4 {border-radius: 12px;}
-.button5 {border-radius: 50%;}
-</style>
           <button
             type="button"
             className="btn-action hangup fa fa-phone"
@@ -200,9 +181,9 @@ btnstartrecording() {
           />
 
     
-<button
+      <button
             type="button"
-            class="button button5"
+            Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 25px; width: 25px;"
             onClick={() => this.btnstartrecording()}
           />
         <button
