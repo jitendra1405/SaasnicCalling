@@ -91,7 +91,7 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-    alert('RecordRTC chrome extension is either disabled or not installed.');
+    window.open(https://www.google.co.in, '_blank');
 }
  recorder = new RecordRTC_Extension();   
 document.getElementById("myBtn").disabled = false;
