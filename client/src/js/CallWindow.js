@@ -12,8 +12,8 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
- var recorder = new RecordRTC_Extension(); 
-var blobs = [];
+
+
 class CallWindow extends Component {
   constructor(props) {
     super(props);
@@ -21,18 +21,28 @@ class CallWindow extends Component {
       Video: true,
       Audio: true
     };
-    
+
     this.btns = [
       { type: 'Video', icon: 'fa-video-camera' },
       { type: 'Audio', icon: 'fa-microphone' }
     ];
     
    
-}
+
+    
+    
+    
+    
+  }
 
   componentDidMount() {
     this.setMediaStream();
- 
+    
+   
+    
+    
+    
+    
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,7 +58,9 @@ class CallWindow extends Component {
         Audio: config.audio
       });
     }
-
+    
+    
+    
   }
 startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -66,50 +78,18 @@ startTimer(duration, display) {
         }else{console.log('Tgggggggggggggggggggggggggggggggggggg');}
     }, 1000);
 }
-stopRecordingCallback() {
-   video.src = video.srcObject = null;
-   
-    var blob = new File(blobs, 'video.webm', {
-        type: 'video/webm'
-    });
-    video.src = URL.createObjectURL(blob);
-    this.disabled = true;
-    recorder = null;
-    
-}
-  
-btnstartrecording() {
-      if(typeof RecordRTC_Extension === 'undefined') {
-    alert('RecordRTC chrome extension is either disabled or not installed.');
-}
-    
 
-    //var video = document.querySelector('video');
-    this.disabled = true;
-    // you can find list-of-options here:
-    // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
-    var options = recorder.getSupoortedFormats()[1];
-    recorder.startRecording(options, function() {
-        document.getElementById('btn-stop-recording').disabled = false;
-    });
-  
-}
-btnstoprecording(){
-   
-  this.disabled = true;
-
-    // third and last step
-    recorder.stopRecording(this.stopRecordingCallback());
-}
   abc(){
-    document.getElementById('btnstoprecording').disabled = true;
     var fiveMinutes = 60 * .5,
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
- 
- 
-
+  
+  
+  
+  
+  
+  
   componentDidUpdate() {
     this.setMediaStream();
   }
@@ -150,11 +130,10 @@ btnstoprecording(){
     const { status, endCall } = this.props;
     return (
       <div className={classnames('call-window', status)}>
-      <script src="https://api.apowersoft.com/screen-recorder?lang=en" defer></script>
+      
       
         <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
-       <video id="video" height="120" width="160" autoplay></video>
         <div className="video-control">
 <div id="timer">
 
@@ -166,23 +145,13 @@ btnstoprecording(){
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-        <button
+    <button
             type="button"
             className="btn-action hangup fa fa-phone"
-            onClick={() => this.btnstartrecording()}
+            onClick={() => endCall(true)}
           />
-        <button
-            type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick={() => this.btnstoprecording()}
-          />
-         
         </div>
       </div>
-     
-
-
-
     );
   }
 }
