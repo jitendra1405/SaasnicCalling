@@ -69,7 +69,7 @@ stopRecordingCallback(blob) {
     
      
     var video = document.querySelector('video');
-    var blob = recorder.getBlob();
+    var URL = window.URL;
     video.src = video.srcObject = null;
     video.src = URL.createObjectURL(blob);
     console.log('value',video.src);
