@@ -82,7 +82,7 @@ startTimer(duration, display) {
 }
 
   abc(){
-    recorder = new RecordRTC_Extension();
+    
     document.getElementById("myBtn").disabled = true;
     var fiveMinutes = 60 * 5,
         display = document.querySelector('#time');
@@ -93,7 +93,7 @@ btnstartrecording() {
  if(typeof RecordRTC_Extension === 'undefined') {
     alert('RecordRTC chrome extension is either disabled or not installed.');
 }
-    
+ recorder = new RecordRTC_Extension();   
 document.getElementById("myBtn").disabled = false;
     //var video = document.querySelector('video');
     this.disabled = true;
