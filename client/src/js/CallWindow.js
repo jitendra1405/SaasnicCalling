@@ -81,7 +81,7 @@ startTimer(duration, display) {
 }
 
   abc(){
-    var fiveMinutes = 60 * .5,
+    var fiveMinutes = 60 * 5,
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
