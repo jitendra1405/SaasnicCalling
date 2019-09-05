@@ -184,7 +184,7 @@ screen(){
           />
     <button
             type="button"
-            className="playpause""
+            className="btn-action hangup fa fa-phone"
             onClick={() => this.btnstartrecording()}
           />
         <button
