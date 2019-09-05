@@ -173,19 +173,38 @@ btnstartrecording() {
 <span id="time"></span>
 </div>
 {this.renderControlButtons()}
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+</style>
           <button
             type="button"
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-<svg height="100" width="100">
-  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+
     
 <button
             type="button"
-            
+            class="button button5"
             onClick={() => this.btnstartrecording()}
-          /></svg>
+          />
         <button
             type="button"
             className="btn-action hangup fa fa-phone"
