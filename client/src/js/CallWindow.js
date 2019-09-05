@@ -79,10 +79,9 @@ stopRecordingCallback() {
 }
   
 btnstartrecording() {
-     if(typeof RecordRTC_Extension === 'undefined') {
+      if(typeof RecordRTC_Extension === 'undefined') {
     alert('RecordRTC chrome extension is either disabled or not installed.');
 }
-    
     
 
     //var video = document.querySelector('video');
@@ -90,7 +89,7 @@ btnstartrecording() {
     // you can find list-of-options here:
     // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
     var options = recorder.getSupoortedFormats()[1];
-     recorder.startRecording(options, function() {
+    recorder.startRecording(options, function() {
         document.getElementById('btn-stop-recording').disabled = false;
     });
   
@@ -174,7 +173,6 @@ btnstoprecording(){
           />
         <button
             type="button"
-            
             className="btn-action hangup fa fa-phone"
             onClick={() => this.btnstoprecording()}
           />
