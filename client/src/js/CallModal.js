@@ -5,7 +5,7 @@ import CallWindow from './CallWindow';
 
 
 
-function CallModal({ status, callFrom, startCall, rejectCall }) {
+function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
   console.log('theriiii',status,rejectCall);
  var audio = new Audio('http://hipehome.com/nokia-ringtone-2019-256k-46684.mp3');
   if(status == " "){
@@ -21,6 +21,12 @@ function CallModal({ status, callFrom, startCall, rejectCall }) {
      
     const config = { audio: true, video };
     return () => startCall(false, callFrom, config, audio.pause());
+         
+  };
+  const acceptWithVideo12 = (video) => {
+     
+    const config = { audio: true, video };
+    return () => startCall12(false, callFrom, config, audio.pause());
          
   };
   
@@ -47,7 +53,7 @@ function CallModal({ status, callFrom, startCall, rejectCall }) {
       <button
         type="button"
         className="btn-action fa fa-phone"
-        onClick={acceptWithVideo(false)}
+        onClick={acceptWithVideo12(false)}
       />
       <button
         type="button"
