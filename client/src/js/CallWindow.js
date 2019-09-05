@@ -12,7 +12,7 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-var recorder = new RecordRTC_Extension(); 
+//var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 
 class CallWindow extends Component {
