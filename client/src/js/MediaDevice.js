@@ -43,13 +43,7 @@ class MediaDevice extends Emitter {
         this.stream = stream;
         this.emit('stream', stream);
       })
-      .catch((err) => {
-        if (err instanceof DOMException) {
-          alert('Cannot open webcam and/or microphone');
-        } else {
-          console.log(err);
-        }
-      });
+      
 
     return this;
   }
