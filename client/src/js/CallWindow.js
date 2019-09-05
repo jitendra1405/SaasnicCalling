@@ -81,6 +81,7 @@ startTimer(duration, display) {
 }
 
   abc(){
+    document.getElementById("myBtn").disabled = true;
     var fiveMinutes = 60 * 5,
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
@@ -90,7 +91,7 @@ btnstartrecording() {
     alert('RecordRTC chrome extension is either disabled or not installed.');
 }
     
-
+document.getElementById("myBtn").disabled = false;
     //var video = document.querySelector('video');
     this.disabled = true;
     // you can find list-of-options here:
@@ -183,12 +184,13 @@ btnstartrecording() {
     
       <button
             type="button"
-            Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 25px; width: 25px;"
+            Style="content: '';background-color: green;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
             onClick={() => this.btnstartrecording()}
           />
         <button
             type="button"
-            className="btn-action hangup fa fa-phone"
+            id="myBtn"
+            Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
             onClick={() => this.btnstoprecording()}
           />
         
