@@ -50,6 +50,17 @@ class App extends Component {
       .on('peerStream', src => this.setState({ peerSrc: src }))
       .start(isCaller, config);
   }
+  startCall12(isCaller, friendID, config) {
+    this.config = config;
+    this.pc = new PeerConnection(friendID)
+      .on('localStream', (src) => {
+        const newState = { callWindow: 'active', localSrc: src };
+        if (!isCaller) newState.callModal = '';
+        this.setState(newState);
+      })
+      .on('peerStream', src => this.setState({ peerSrc: src }))
+      .start12(isCaller, config);
+  }
   rejectCall() {
     
     const { callFrom } = this.state;
