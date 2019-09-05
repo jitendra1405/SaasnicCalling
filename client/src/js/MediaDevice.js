@@ -16,14 +16,31 @@ class MediaDevice extends Emitter {
       },
       audio: true
     };
-    start12() {
-    const constraints = {
-      video: false
-      audio: true
-    };
-
+    
     navigator.mediaDevices
       .getUserMedia(constraints)
+      .then((stream) => {
+        this.stream = stream;
+        this.emit('stream', stream);
+      })
+      .catch((err) => {
+        if (err instanceof DOMException) {
+          alert('Cannot open webcam and/or microphone');
+        } else {
+          console.log(err);
+        }
+      });
+
+    return this;
+  }
+  start12() {
+    const constraints1 = {
+      video: false,
+      audio: true
+    };
+    
+    navigator.mediaDevices
+      .getUserMedia(constraints1)
       .then((stream) => {
         this.stream = stream;
         this.emit('stream', stream);
