@@ -31,8 +31,6 @@ class MediaDevice extends Emitter {
         }
       });
 
-    return this;
-  }
   start12() {
     const constraints1 = {
       video: false,
