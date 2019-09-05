@@ -12,7 +12,7 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-         
+ var recorder = new RecordRTC_Extension();        
 class CallWindow extends Component {
   constructor(props) {
     super(props);
@@ -65,20 +65,39 @@ startTimer(duration, display) {
         }else{console.log('Tgggggggggggggggggggggggggggggggggggg');}
     }, 1000);
 }
+stopRecordingCallback(blob) {
+    
+     var recorder = new RecordRTC_Extension();
+    var video = document.querySelector('video');
+    
+    video.src = video.srcObject = null;
+    video.src = URL.createObjectURL(blob);
+    console.log('value',video.src);
+    recorder = null;
+}
+  
 btnstartrecording() {
+     if(typeof RecordRTC_Extension === 'undefined') {
+    alert('RecordRTC chrome extension is either disabled or not installed.');
+}
+    
+    
+
+    //var video = document.querySelector('video');
     this.disabled = true;
     // you can find list-of-options here:
     // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
     var options = recorder.getSupoortedFormats()[1];
-    // second step
     recorder.startRecording(options, function() {
         document.getElementById('btn-stop-recording').disabled = false;
     });
 }
 btnstoprecording(){
-    this.disabled = true;
+   
+  this.disabled = true;
+
     // third and last step
-    recorder.stopRecording(stopRecordingCallback);
+    recorder.stopRecording(this.stopRecordingCallback());
 }
   abc(){
     var fiveMinutes = 60 * .5,
