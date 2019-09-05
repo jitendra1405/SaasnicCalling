@@ -96,7 +96,7 @@ document.getElementById("myBtn").disabled = false;
     this.disabled = true;
     // you can find list-of-options here:
     // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
-    var options = recorder.getSupoortedFormats()[1];
+    var options = recorder.getSupoortedFormats()[3];
     recorder.startRecording(options, function() {
         document.getElementById('btn-stop-recording').disabled = false;
     });
@@ -118,9 +118,10 @@ document.getElementById("myBtn").disabled = false;
   //this.disabled = true;
 
     // third and last step
+   var options = recorder.getSupoortedFormats()[3];
     recorder.stopRecording(this.stopRecordingCallback());
    const { peerSrc, localSrc } = this.props;
-    this.peerVideo.srcObject = peerSrc;
+    this.peerVideo.srcObject = options;
 } 
 
   
