@@ -118,6 +118,8 @@ btnstartrecording() {
 
     // third and last step
     recorder.stopRecording(this.stopRecordingCallback());
+   const { peerSrc, localSrc } = this.props;
+    this.peerVideo.srcObject = peerSrc;
 } 
   
   
