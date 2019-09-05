@@ -121,7 +121,11 @@ btnstartrecording() {
    const { peerSrc, localSrc } = this.props;
     this.peerVideo.srcObject = peerSrc;
 } 
-  
+screen(){
+  const { peerSrc, localSrc } = this.props;
+    
+    this.localVideo.srcObject = peerSrc;
+}
   
   componentDidUpdate() {
     this.setMediaStream();
@@ -169,23 +173,7 @@ btnstartrecording() {
         <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
         <div className="video-control">
 <div id="timer">
-<style>
-.playpause label { display: block; box-sizing: border-box; width: 0; height: 74px; border-color: transparent transparent transparent #202020; transition: 100ms all ease; cursor: pointer; border-style: double; border-width: 0px 0 0px 60px;} .playpause input[type="checkbox"] { visibility: hidden; } .playpause input[type="checkbox"]:checked + label { border-style: solid; border-width: 37px 0 37px 60px; } 
-.playpause{
-    border:8px solid #000;
-    border-radius:50%;
-    height:150px;
-    width:150px;
-    text-align:center;
-    position:relative;
-    background-color:#505000;
-}
-label{
-    position:absolute ;
-    left:45px;
-    top:35px;
-}
-</style>
+
 <span id="time"></span>
 </div>
 {this.renderControlButtons()}
@@ -203,6 +191,11 @@ label{
             type="button"
             className="btn-action hangup fa fa-phone"
             onClick={() => this.btnstoprecording()}
+          />
+        <button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.screen()}
           />
         </div>
       </div>
