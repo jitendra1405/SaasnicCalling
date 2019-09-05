@@ -90,11 +90,11 @@ btnstartrecording() {
     // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
     var options = recorder.getSupoortedFormats()[1];
     recorder.startRecording(options, function() {
-        document.getElementById('btn-stop-recording').disabled = false;
+        document.getElementById('btnstoprecording').disabled = false;
     });
 }
 btnstoprecording(){
-   
+   document.getElementById('btnstoprecording').disabled = true;
   this.disabled = true;
 
     // third and last step
@@ -171,6 +171,7 @@ btnstoprecording(){
           />
         <button
             type="button"
+            ID="btnstoprecording"
             className="btn-action hangup fa fa-phone"
             onClick={() => this.btnstoprecording()}
           />
