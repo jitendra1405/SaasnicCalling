@@ -66,14 +66,8 @@ startTimer(duration, display) {
     }, 1000);
 }
 stopRecordingCallback(blob) {
+    recorder.destroy();
     
-     
-    var video = document.querySelector('video');
-    var URL = window.URL;
-    video.src = video.srcObject = null;
-    video.src = URL.createObjectURL(blob);
-    console.log('value',video.src);
-    recorder = null;
 }
   
 btnstartrecording() {
