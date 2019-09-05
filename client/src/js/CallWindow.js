@@ -67,7 +67,7 @@ startTimer(duration, display) {
 }
 stopRecordingCallback(blob) {
     
-     var recorder = new RecordRTC_Extension();
+     
     var video = document.querySelector('video');
     
     video.src = video.srcObject = null;
