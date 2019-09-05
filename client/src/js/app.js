@@ -54,6 +54,7 @@ class App extends Component {
   startCall12(isCaller, friendID, config) {
     console.log('i am in start call 12');
     this.config = config;
+    console.log('i am in start call start');
     this.pc = new PeerConnection(friendID)
       .on('localStream', (src) => {
         const newState = { callWindow: 'active', localSrc: src };
@@ -61,7 +62,8 @@ class App extends Component {
         this.setState(newState);
       })
       .on('peerStream', src => this.setState({ peerSrc: src }))
-      .start(isCaller, config);
+      .start12(isCaller, config);
+    console.log('i am in start call last');
   }
   
   rejectCall() {
