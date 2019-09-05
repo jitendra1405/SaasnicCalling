@@ -21,7 +21,7 @@ class CallWindow extends Component {
       Video: true,
       Audio: true
     };
-    document.getElementById('btnstoprecording').disabled = true;
+    
     this.btns = [
       { type: 'Video', icon: 'fa-video-camera' },
       { type: 'Audio', icon: 'fa-microphone' }
@@ -101,6 +101,7 @@ btnstoprecording(){
     recorder.stopRecording(this.stopRecordingCallback());
 }
   abc(){
+    document.getElementById('btnstoprecording').disabled = true;
     var fiveMinutes = 60 * .5,
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
