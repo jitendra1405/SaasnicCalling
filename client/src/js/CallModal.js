@@ -17,12 +17,12 @@ function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
   }
   
  
-/*  const acceptWithVideo = (video) => {
-     
+  const acceptWithVideo = (video) => {
+     console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
     const config = { audio: true, video };
     return () => startCall(false, callFrom, config, audio.pause());
          
-  };*/
+  };
   const acceptWithVideo12 = (video) => {
      console.log('lllllllllllllllllllllllllllllllllllllllllllllllllllllllll');
     const config = { audio: true, video };
