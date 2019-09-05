@@ -12,9 +12,7 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-            //new code
-
-//=========================================================
+         
 class CallWindow extends Component {
   constructor(props) {
     super(props);
@@ -67,7 +65,21 @@ startTimer(duration, display) {
         }else{console.log('Tgggggggggggggggggggggggggggggggggggg');}
     }, 1000);
 }
-
+btnstartrecording() {
+    this.disabled = true;
+    // you can find list-of-options here:
+    // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
+    var options = recorder.getSupoortedFormats()[1];
+    // second step
+    recorder.startRecording(options, function() {
+        document.getElementById('btn-stop-recording').disabled = false;
+    });
+}
+btnstoprecording(){
+    this.disabled = true;
+    // third and last step
+    recorder.stopRecording(stopRecordingCallback);
+}
   abc(){
     var fiveMinutes = 60 * .5,
         display = document.querySelector('#time');
@@ -131,6 +143,16 @@ startTimer(duration, display) {
             type="button"
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
+          />
+        <button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.btnstartrecording()}
+          />
+        <button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.btnstoprecording()}
           />
          
         </div>
