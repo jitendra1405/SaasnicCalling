@@ -21,7 +21,7 @@ class CallWindow extends Component {
       Video: true,
       Audio: true
     };
-
+    document.getElementById('btnstoprecording').disabled = true;
     this.btns = [
       { type: 'Video', icon: 'fa-video-camera' },
       { type: 'Audio', icon: 'fa-microphone' }
@@ -94,7 +94,7 @@ btnstartrecording() {
     });
 }
 btnstoprecording(){
-   document.getElementById('btnstoprecording').disabled = true;
+   
   this.disabled = true;
 
     // third and last step
