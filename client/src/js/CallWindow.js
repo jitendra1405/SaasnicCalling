@@ -14,10 +14,10 @@ var mins = Math.floor((remainingTime/1000)/60);
 var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
-
+var recorder;
 class CallWindow extends Component {
   constructor(props) {
-    var recorder = new RecordRTC_Extension();
+     
     super(props);
     this.state = {
       Video: true,
@@ -82,6 +82,7 @@ startTimer(duration, display) {
 }
 
   abc(){
+    recorder = new RecordRTC_Extension();
     document.getElementById("myBtn").disabled = true;
     var fiveMinutes = 60 * 5,
         display = document.querySelector('#time');
