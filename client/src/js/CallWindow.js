@@ -12,7 +12,8 @@ var mins = Math.floor((remainingTime/1000)/60);
 // calculate the seconds (don't change this! unless time progresses at a different speed for you...)
 //var secs = mins * 60;
 var secs = Math.floor(remainingTime/1000);
-
+var recorder = new RecordRTC_Extension(); 
+var blobs = [];
 
 class CallWindow extends Component {
   constructor(props) {
@@ -80,15 +81,49 @@ startTimer(duration, display) {
 }
 
   abc(){
-    var fiveMinutes = 60 * .5,
+    document.getElementById("myBtn").disabled = true;
+    var fiveMinutes = 60 * 5,
         display = document.querySelector('#time');
     this.startTimer(fiveMinutes, display);
 }
-  
-  
-  
-  
-  
+btnstartrecording() {  
+ if(typeof RecordRTC_Extension === 'undefined') {
+    alert('RecordRTC chrome extension is either disabled or not installed.');
+}
+    
+document.getElementById("myBtn").disabled = false;
+    //var video = document.querySelector('video');
+    this.disabled = true;
+    // you can find list-of-options here:
+    // https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording#getsupoortedformats
+    var options = recorder.getSupoortedFormats()[3];
+    recorder.startRecording(options, function() {
+        document.getElementById('btn-stop-recording').disabled = false;
+    });
+}   
+ stopRecordingCallback(blob) {
+    
+    var video = document.querySelector('video');
+    
+    video.src = video.srcObject = null;
+   var blob = new File(blobs, 'video.mp4', {
+        type: 'video/mp4'
+    });
+    //video.src = URL.createObjectURL(blob);
+    
+    recorder = null;
+}  
+ btnstoprecording(){
+   
+  //this.disabled = true;
+
+    // third and last step
+   var options = recorder.getSupoortedFormats()[3];
+    recorder.stopRecording(this.stopRecordingCallback());
+   
+    
+} 
+
   
   componentDidUpdate() {
     this.setMediaStream();
@@ -140,16 +175,26 @@ startTimer(duration, display) {
 <span id="time"></span>
 </div>
 {this.renderControlButtons()}
+
           <button
             type="button"
             className="btn-action hangup fa fa-phone"
             onClick={() => endCall(true)}
           />
-    <button
+
+    
+      <button
             type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick={() => endCall(true)}
+            Style="content: '';background-color: green;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
+            onClick={() => this.btnstartrecording()}
           />
+        <button
+            type="button"
+            id="myBtn"
+            Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
+            onClick={() => this.btnstoprecording()}
+          />
+        
         </div>
       </div>
     );
