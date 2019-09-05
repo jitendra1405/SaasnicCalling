@@ -21,6 +21,7 @@ class App extends Component {
     this.pc = {};
     this.config = null;
     this.startCallHandler = this.startCall.bind(this);
+    this.startCall12Handler = this.startCall12.bind(this);
     this.endCallHandler = this.endCall.bind(this);
     this.rejectCallHandler = this.rejectCall.bind(this);
   }
@@ -40,6 +41,17 @@ class App extends Component {
   }
 
   startCall(isCaller, friendID, config) {
+    this.config = config;
+    this.pc = new PeerConnection(friendID)
+      .on('localStream', (src) => {
+        const newState = { callWindow: 'active', localSrc: src };
+        if (!isCaller) newState.callModal = '';
+        this.setState(newState);
+      })
+      .on('peerStream', src => this.setState({ peerSrc: src }))
+      .start(isCaller, config);
+  }
+  startCall12(isCaller, friendID, config) {
     this.config = config;
     this.pc = new PeerConnection(friendID)
       .on('localStream', (src) => {
@@ -79,6 +91,7 @@ endCall(isStarter) {
         <MainWindow
           clientId={clientId}
           startCall={this.startCallHandler}
+          startCall12={this.startCall12Handler}
         />
         <CallWindow
           status={callWindow}
@@ -91,6 +104,7 @@ endCall(isStarter) {
         <CallModal
           status={callModal}
           startCall={this.startCallHandler}
+          startCall12={this.startCall12Handler}
           rejectCall={this.rejectCallHandler}
           callFrom={callFrom}
         />
