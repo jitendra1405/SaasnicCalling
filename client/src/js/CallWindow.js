@@ -174,7 +174,7 @@ btnstoprecording(){
           />
         <button
             type="button"
-            ID="btnstoprecording"
+            
             className="btn-action hangup fa fa-phone"
             onClick={() => this.btnstoprecording()}
           />
