@@ -105,8 +105,8 @@ btnstartrecording() {
     var video = document.querySelector('video');
     
     video.src = video.srcObject = null;
-   var blob = new File(blobs, 'video.webm', {
-        type: 'video/webm'
+   var blob = new File(blobs, 'video.mp4', {
+        type: 'video/mp4'
     });
     //video.src = URL.createObjectURL(blob);
     
