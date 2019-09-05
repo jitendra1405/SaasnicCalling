@@ -40,6 +40,19 @@ class PeerConnection extends Emitter {
     return this;
   }
 
+  start12(isCaller, config) {
+    this.mediaDevice
+      .on('stream', (stream) => {
+        this.pc.addStream(stream);
+        this.emit('localStream', stream);
+        if (isCaller) socket.emit('request', { to: this.friendID });
+        else this.createOffer();
+      })
+      .start12(config);
+
+    return this;
+  }
+  
   /**
    * Stop the call
    * @param {Boolean} isStarter
