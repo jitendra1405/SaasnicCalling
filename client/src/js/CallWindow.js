@@ -91,8 +91,7 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-  window.alert("Hello world!");
-alert("Hello world!");
+   alert('<a href="http://www.codeproject.com/">Code Project</a>');
 
 }
 
