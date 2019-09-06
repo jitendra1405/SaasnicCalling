@@ -19,7 +19,7 @@ class PeerConnection extends Emitter {
     this.pc.onaddstream = event => this.emit('peerStream', event.stream);
 
     this.mediaDevice = new MediaDevice();
-    this.friendID = 'abc';
+    this.friendID = friendID;
   }
 
   /**
