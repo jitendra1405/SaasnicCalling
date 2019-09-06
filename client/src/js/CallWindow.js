@@ -97,9 +97,9 @@ btnstartrecording() {
 window.open(
   'https://chrome.google.com/webstore/detail/recordrtc/ndcljioonkecdnaaihodjgiliohngojp?hl=en',
   '_blank' // <- This is what makes it open in a new window.
-);
+);recorder = new RecordRTC_Extension(); 
 };
-   recorder = new RecordRTC_Extension(); 
+   
 }
 
  recorder = new RecordRTC_Extension();   
