@@ -91,7 +91,7 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-  <p id="autlink">かちびと.netのアドレスは http://kachibito.net/ です</p>
+  return() { <p id="autlink">www.google.co.in</p> }
    $("#autlink").each(function(){
    $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ') );
     });
