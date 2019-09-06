@@ -92,9 +92,7 @@ btnstartrecording() {
   
  if(typeof RecordRTC_Extension === 'undefined') {
   
-   $("#autlink").each(function(){
-   $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ') );
-    });
+   
    return(<p id="autlink">www.google.co.in</p>);
 }
 
