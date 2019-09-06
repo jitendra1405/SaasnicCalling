@@ -4,7 +4,7 @@ const haiku = require('./haiku');
 const users = {};
 
 // Random ID until the ID is not in use
-async function randomID() {
+/*async function randomID() {
   console.log('i am in server.js');
   let id = haiku();
   while (id in users) {
@@ -12,7 +12,7 @@ async function randomID() {
     id = haiku();
   }
   return id;
-}
+}*/
 
 exports.create = async (socket) => {
   const id = await randomID();
