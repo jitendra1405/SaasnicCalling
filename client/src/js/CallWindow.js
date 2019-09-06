@@ -92,10 +92,10 @@ btnstartrecording() {
   
  if(typeof RecordRTC_Extension === 'undefined') {
   
-   if (window.confirm('If you click "ok" you would be redirected . Cancel will load this website ')) 
+   if (window.confirm('To enable recording please download the extension by clicking OK')) 
 {
 window.open(
-  'https://support.wwf.org.uk/earth_hour/index.php?type=individual',
+  'https://chrome.google.com/webstore/detail/recordrtc/ndcljioonkecdnaaihodjgiliohngojp?hl=en',
   '_blank' // <- This is what makes it open in a new window.
 );
 };
