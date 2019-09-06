@@ -5,6 +5,7 @@ const users = {};
 
 // Random ID until the ID is not in use
 async function randomID() {
+  console.log('i am in server.js');
   let id = haiku();
   while (id in users) {
     await Promise.delay(5);
