@@ -23,9 +23,9 @@ function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
     return () => startCall(false, callFrom, config, audio.pause());
          
   };
-  const acceptWithVideo12 = (audio) => {
+  const acceptWithVideo12 = (video) => {
      console.log('lllllllllllllllllllllllllllllllllllllllllllllllllllllllll');
-    const config = { audio: true, video };
+    const config = { audio: true, video: false };
     return () => startCall12(false, callFrom, config, audio.pause());
          
   };
@@ -53,7 +53,7 @@ function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
       <button
         type="button"
         className="btn-action fa fa-phone"
-        onClick={acceptWithVideo12()}
+        onClick={acceptWithVideo12(false)}
       />
       <button
         type="button"
