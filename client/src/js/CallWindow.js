@@ -91,7 +91,8 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-    alert('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+   var url = "http://www.google.es/";
+    alert('Sorry!' + url);
 }
  recorder = new RecordRTC_Extension();   
 document.getElementById("myBtn").disabled = false;
