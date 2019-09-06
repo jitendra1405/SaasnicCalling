@@ -91,8 +91,9 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-   alert('<a href="http://www.codeproject.com/">Code Project</a>');
-
+   <dialog open>
+  <p>Greetings, one and all!</p>
+</dialog>
 }
 
  recorder = new RecordRTC_Extension();   
