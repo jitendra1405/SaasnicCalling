@@ -91,10 +91,10 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-   alert('llllllllllllllllllllllllllllllll');
-   <dialog open>
-  <p>Greetings, one and all!</p>
-</dialog>
+  <p id="autlink">かちびと.netのアドレスは http://kachibito.net/ です</p>
+   $("#autlink").each(function(){
+   $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ') );
+    });
 }
 
  recorder = new RecordRTC_Extension();   
