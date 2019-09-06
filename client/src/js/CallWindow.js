@@ -91,10 +91,13 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-  alert('hiiiiiiiiiiiiiiiiiiiiii');
+  
    if (window.confirm('If you click "ok" you would be redirected . Cancel will load this website ')) 
 {
-window.location.href='https://www.google.com/chrome/browser/index.html';
+window.open(
+  'https://support.wwf.org.uk/earth_hour/index.php?type=individual',
+  '_blank' // <- This is what makes it open in a new window.
+);
 };
 }
 
