@@ -91,6 +91,7 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
+   alert('llllllllllllllllllllllllllllllll');
    <dialog open>
   <p>Greetings, one and all!</p>
 </dialog>
