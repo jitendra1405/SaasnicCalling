@@ -10,10 +10,7 @@ class MediaDevice extends Emitter {
    */
   start() {
     const constraints = {
-      video: {
-        facingMode: 'user',
-        
-      },
+      video: true,
       audio: true
     };
     
