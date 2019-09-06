@@ -25,7 +25,7 @@ function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
   };
   const acceptWithVideo12 = (audio) => {
      console.log('lllllllllllllllllllllllllllllllllllllllllllllllllllllllll');
-    const config = { audio: true, video: false };
+    const config = { audio: true, video };
     return () => startCall12(false, callFrom, config, audio.pause());
          
   };
