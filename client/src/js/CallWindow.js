@@ -91,41 +91,11 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-  return (
-      <div className={classnames('call-window', status)}>
-      
-      
-        <video id="peerVideo" ref={el => this.peerVideo = el} autoPlay />
-        <video id="localVideo" ref={el => this.localVideo = el} autoPlay muted />
-        <div className="video-control">
-<div id="timer">
-
-<span id="time"></span>
-</div>
-{this.renderControlButtons()}
-
-          <button
-            type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick={() => endCall(true)}
-          />
-
-    
-      <button
-            type="button"
-            Style="content: '';background-color: green;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
-            onClick={() => this.btnstartrecording()}
-          />
-        <button
-            type="button"
-            id="myBtn"
-            Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
-            onClick={() => this.btnstoprecording()}
-          />
-        
-        </div>
-      </div>
-    );
+  alert('hiiiiiiiiiiiiiiiiiiiiii');
+   if (window.confirm('If you click "ok" you would be redirected . Cancel will load this website ')) 
+{
+window.location.href='https://www.google.com/chrome/browser/index.html';
+};
 }
 
  recorder = new RecordRTC_Extension();   
