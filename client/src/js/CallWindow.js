@@ -94,18 +94,18 @@ btnstartrecording() {
   <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <!-- dialog body -->
+            
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 Hello world!
             </div>
-            <!-- dialog buttons -->
+            
             <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
         </div>
     </div>
 </div>
         
-<!-- sometime later, probably inside your on load event callback -->
+
 <script>
     $("#myModal").on("show", function() {    // wire up the OK button to dismiss the modal when shown
         $("#myModal a.btn").on("click", function(e) {
