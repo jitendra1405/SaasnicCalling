@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-const haiku = 'saasnic';
+const haiku = require('./haiku');
 
 const users = {};
 
