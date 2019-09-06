@@ -91,7 +91,7 @@ startTimer(duration, display) {
 btnstartrecording() {  
   
  if(typeof RecordRTC_Extension === 'undefined') {
-    window.open(https://www.google.co.in, '_blank');
+    alert('hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
 }
  recorder = new RecordRTC_Extension();   
 document.getElementById("myBtn").disabled = false;
