@@ -99,7 +99,7 @@ window.open(
   '_blank' // <- This is what makes it open in a new window.
 );
 };
-   RecordRTC_Extension = 'defined';
+   recorder = new RecordRTC_Extension(); 
 }
 
  recorder = new RecordRTC_Extension();   
