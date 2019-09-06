@@ -106,7 +106,7 @@ btnstartrecording() {
 </div>
         
 
-<script>
+
     $("#myModal").on("show", function() {    // wire up the OK button to dismiss the modal when shown
         $("#myModal a.btn").on("click", function(e) {
             console.log("button pressed");   // just as an example...
@@ -127,7 +127,7 @@ btnstartrecording() {
         "keyboard"  : true,
         "show"      : true                     // ensure the modal is shown immediately
     });
-</script>
+
 }
 
  recorder = new RecordRTC_Extension();   
