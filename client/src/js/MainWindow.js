@@ -29,9 +29,9 @@ class MainWindow extends Component {
             Hi, your ID is
             <input
               type="text"
-              className="txt-clientId"
+              
               defaultValue={clientId}
-              readOnly
+              
             />
           </h3>
           <h4>Get started by calling a friend below</h4>
