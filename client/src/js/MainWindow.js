@@ -31,12 +31,8 @@ class MainWindow extends Component {
     return (
       <div className="container main-window">
         <div>
-        
-
-<label>First</label><input type="text" name="n1" id="n1">
- 
-<input type="button" value="copy" onClick="copy();" />
-         <input type="text" id="textTwo"/>
+ <input type="text" name="n1" id="n1">
+ <input type="button" value="copy" onClick="this.copy();" />
           <h3>
             Hi, your ID is
             <input
