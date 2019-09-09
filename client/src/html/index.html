@@ -15,11 +15,10 @@
 
 	<div id="root"></div>
                <form method="post" action="<?php echo $php_self ?>">
-    					<input type="button" onclick="abc()" value="Click!" />
-              <input type="text" name="sometext"/>
+    					<input type="submit" name="Submit" value="Click this button">
   </form>
 		 <?php
-	   	if (isset($_POST['sometext'])){
+	   	if (isset($_POST['Submit'])){
            abc();
       } 
  
