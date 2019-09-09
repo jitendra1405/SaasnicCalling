@@ -3,9 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
- <?php
- abc();
-?>
+ 
 </head>
 
 <body>
@@ -18,12 +16,18 @@
 	<div id="root"></div>
                <form method="post" action="<?php echo $php_self ?>">
     					<input type="submit" name="Submit" value="Click this button">
-  </form>
-<?php	
-           function abc(){
-echo "hello world";
-		   	 
-	}
+  <?php
+function add($a,$b){
+  $c=$a+$b;
+  return $c;
+}
 ?>
+<script>
+function phpadd() {
+  var phpadd = <?php add(1,2);?> //call the php add function
+  alert(phpadd);
+</script>
+
+<button onclick='phpadd()'>add</button>
 </body>
 </html>
