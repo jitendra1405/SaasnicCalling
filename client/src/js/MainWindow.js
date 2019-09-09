@@ -18,7 +18,6 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
-
   
   render() {
     const { clientId } = this.props;
@@ -27,13 +26,12 @@ class MainWindow extends Component {
       <div className="container main-window">
         <div>
           <h3>
-            <input type="text" name="n1" id="n1" />
             Hi, your ID is
             <input
               type="text"
               className="txt-clientId"
-              name="n2" 
-              id="n2"
+              defaultValue={clientId}
+              readOnly
             />
           </h3>
           <h4>Get started by calling a friend below</h4>
@@ -48,7 +46,7 @@ class MainWindow extends Component {
           />
            
           <div>
-            <input type="button" value="copy" onClick={this.copy()} />
+      
             <button
               type="button"
               className="btn-action fa fa-video-camera"
@@ -64,14 +62,7 @@ class MainWindow extends Component {
       </div>
     );
   }
-copy()
-{
-    var n1 = document.getElementById("n1");
-    var n2 = document.getElementById("n2");
-    n2 = n1;
 }
-}
-
 
 MainWindow.propTypes = {
   clientId: PropTypes.string.isRequired,
