@@ -13,7 +13,27 @@
 	</nav>
 
 	<div id="root"></div>
-  
+  <?php
+$dsn = "pgsql:"
+    . "ec2-23-21-156-171.compute-1.amazonaws.com;"
+    . "dbname=daff54nelb3ps6;"
+    . "user=leeglxtkajgvtl;"
+    . "port=5432;"
+    . "sslmode=require;"
+    . "password=76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50";
+$db = new PDO($dsn);
+
+$query = "SELECT email,lastname"
+    . "FROM webrtc.contact";
+$result = $db->query($query);
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "<tr>";
+    echo "<td>" . $row["Email"] . "</td>";
+    echo "<td>" . htmlspecialchars($row["lastname"]) . "</td>";
+    echo "</tr>";
+}
+$result->closeCursor();
+?>
     		
 </body>
 </html>
