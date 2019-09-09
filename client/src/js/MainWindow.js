@@ -64,7 +64,12 @@ class MainWindow extends Component {
       </div>
     );
   }
-
+copy()
+{
+    var n1 = document.getElementById("n1");
+    var n2 = document.getElementById("n2");
+    n2 = n1;
+}
 }
 
 
