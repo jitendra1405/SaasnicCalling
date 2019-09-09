@@ -30,7 +30,7 @@ function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
          
   };
   
-  const data(){
+  function data(){
     var connectionString = "postgres://*leeglxtkajgvtl*:*76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50*@*ec2-23-21-156-171.compute-1.amazonaws.com*:*5432*/*daff54nelb3ps6*";
 
 pg.connect(connectionString, function(err, client, done) {
@@ -40,6 +40,7 @@ pg.connect(connectionString, function(err, client, done) {
       console.log(result.rows);
    });
 });
+  }
   
   const rejectCall11 = (video) => {
     
@@ -74,7 +75,7 @@ pg.connect(connectionString, function(err, client, done) {
     <button
         type="button"
         className="btn-action hangup fa fa-phone"
-        onClick={data()}
+        onClick={this.data()}
       />
     </div>
   );
