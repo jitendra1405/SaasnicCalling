@@ -18,6 +18,12 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
+  copy()
+{
+    var n1 = document.getElementById("n1");
+    var n2 = document.getElementById("n2");
+    n2.value = n1.value;
+}
   
   render() {
     const { clientId } = this.props;
@@ -25,13 +31,18 @@ class MainWindow extends Component {
     return (
       <div className="container main-window">
         <div>
+        
+
+<label>First</label><input type="text" name="n1" id="n1">
+ 
+<input type="button" value="copy" onClick="copy();" />
          <input type="text" id="textTwo"/>
           <h3>
             Hi, your ID is
             <input
               type="text"
               className="txt-clientId"
-              defaultValue=$("#textOne")
+              name="n2" id="n2"
               readOnly
             />
           </h3>
