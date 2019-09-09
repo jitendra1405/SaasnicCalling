@@ -32,7 +32,7 @@ class MainWindow extends Component {
       <div className="container main-window">
         <div>
           <h3>
-            <input type="text" name="n1" id="n1">
+            <input type="text" name="n1" id="n1" />
             Hi, your ID is
             <input
               type="text"
@@ -53,7 +53,7 @@ class MainWindow extends Component {
           />
            
           <div>
-            <input type="button" value="copy" onClick="this.copy();" />
+            <input type="button" value="copy" onClick={this.copy()} />
             <button
               type="button"
               className="btn-action fa fa-video-camera"
