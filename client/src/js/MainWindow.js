@@ -25,13 +25,14 @@ class MainWindow extends Component {
     return (
       <div className="container main-window">
         <div>
+         <input type="text" id="textTwo"/>
           <h3>
             Hi, your ID is
             <input
               type="text"
-              
-              defaultValue={clientId}
-              
+              className="txt-clientId"
+              defaultValue=$("#textOne")
+              readOnly
             />
           </h3>
           <h4>Get started by calling a friend below</h4>
