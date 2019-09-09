@@ -7,13 +7,20 @@
 </head>
 
 <body>
+  <?php
+function add($a,$b){
+  $c=$a+$b;
+  return $c;
+}
+?>
    <p>The global function (myFunction) returns the product of the arguments (a ,b):</p>
 
 <p id="demo"></p>
 
 <script>
 function myFunction(a, b) {
-  return a * b;
+ var phpadd = <?php add(1,2);?> //call the php add function
+  alert(phpadd);
 }
 document.getElementById("demo").innerHTML = myFunction(10, 2); 
 </script>
