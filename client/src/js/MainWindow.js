@@ -18,7 +18,7 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
-  copy()
+ copy()
 {
     var n1 = document.getElementById("n1");
     var n2 = document.getElementById("n2");
@@ -31,15 +31,14 @@ class MainWindow extends Component {
     return (
       <div className="container main-window">
         <div>
- <input type="text" name="n1" id="n1">
- <input type="button" value="copy" onClick="this.copy();" />
           <h3>
+            <input type="text" name="n1" id="n1">
             Hi, your ID is
             <input
               type="text"
               className="txt-clientId"
-              name="n2" id="n2"
-              readOnly
+              name="n2" 
+              id="n2"
             />
           </h3>
           <h4>Get started by calling a friend below</h4>
@@ -54,7 +53,7 @@ class MainWindow extends Component {
           />
            
           <div>
-      
+            <input type="button" value="copy" onClick="this.copy();" />
             <button
               type="button"
               className="btn-action fa fa-video-camera"
