@@ -7,19 +7,16 @@
 </head>
 
 <body>
-    <?php
-function add($a,$b){
-  $c=$a+$b;
-  return $c;
-}
-?>
-<script>
-function phpadd() {
-  var phpadd = <?php add(1,2);?> //call the php add function
-  alert(phpadd);
-</script>
+   <p>The global function (myFunction) returns the product of the arguments (a ,b):</p>
 
-<button onclick='phpadd()'>add</button>
+<p id="demo"></p>
+
+<script>
+function myFunction(a, b) {
+  return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction(10, 2); 
+</script>
 	<nav class="navbar-header">
 		<span class="navbar-brand">
 			<img src="${require(`../assets/saasnic-logo-1.png`)}" /> SaaSnic VideoCall
