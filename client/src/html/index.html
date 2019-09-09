@@ -8,23 +8,6 @@
 </head>
 
 <body>
-<button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
- var phpadd= <?php echo add(1,2);?>
-   alert(phpadd);
-}
-</script>
-  <?php
-function add($a,$b){
-  $c=$a+$b;
-  return $c;
-}
-?>
 	<nav class="navbar-header">
 		<span class="navbar-brand">
 			<img src="${require(`../assets/saasnic-logo-1.png`)}" /> SaaSnic VideoCall
