@@ -18,12 +18,7 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
- copy()
-{
-    var n1 = document.getElementById("n1");
-    var n2 = document.getElementById("n2");
-    n2.value = n1.value;
-}
+
   
   render() {
     const { clientId } = this.props;
@@ -69,7 +64,9 @@ class MainWindow extends Component {
       </div>
     );
   }
+
 }
+
 
 MainWindow.propTypes = {
   clientId: PropTypes.string.isRequired,
