@@ -29,6 +29,6 @@ module.exports = () => {
   const MAX = 9999;
   const num = Math.floor(Math.random() * ((MAX + 1) - MIN)) + MIN;
   const abc = 'saasnic';
-  return `${abc}`;
+ return `${adj}-${noun}-${num}`;
   
 };
