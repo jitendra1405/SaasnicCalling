@@ -12,17 +12,14 @@ function add($a,$b){
 </head>
 
 <body>
-  
-   <p>The global function (myFunction) returns the product of the arguments (a ,b):</p>
+<button onclick="myFunction()">Click me</button>
 
 <p id="demo"></p>
 
 <script>
-function myFunction(a, b) {
- var phpadd = <?php add(1,2);?> //call the php add function
-  alert(phpadd);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
 }
-document.getElementById("demo").innerHTML = myFunction(10, 2); 
 </script>
 	<nav class="navbar-header">
 		<span class="navbar-brand">
