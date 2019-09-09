@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+function add($a,$b){
+  $c=$a+$b;
+  return $c;
+}
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -7,12 +12,7 @@
 </head>
 
 <body>
-  <?php
-function add($a,$b){
-  $c=$a+$b;
-  return $c;
-}
-?>
+  
    <p>The global function (myFunction) returns the product of the arguments (a ,b):</p>
 
 <p id="demo"></p>
@@ -34,4 +34,4 @@ document.getElementById("demo").innerHTML = myFunction(10, 2);
              
 
 </body>
-</html>
+</html>?>
