@@ -23,6 +23,7 @@ const nouns = [
 ];
 
 module.exports = () => {
+  console.log('i am in haiku');
   const adj = adjs[Math.floor(Math.random() * adjs.length)];
   const noun = nouns[Math.floor(Math.random() * nouns.length)];
   const MIN = 1000;
