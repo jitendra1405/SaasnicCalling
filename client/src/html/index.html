@@ -3,8 +3,26 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
-  <?php
-		
+ 
+</head>
+
+<body>
+	<nav class="navbar-header">
+		<span class="navbar-brand">
+			<img src="${require(`../assets/saasnic-logo-1.png`)}" /> SaaSnic VideoCall
+		</span>
+	</nav>
+
+	<div id="root"></div>
+               <form method="post" action="<?php echo $php_self ?>">
+    					<input type="button" onclick="abc()" value="Click!" />
+              <input type="text" name="sometext"/>
+  </form>
+		 <?php
+	   	if (isset($_POST['sometext'])){
+           abc();
+      } 
+ 
 	  
 	   function abc(){
 		   	   $dbconn = pg_connect("host=ec2-23-21-156-171.compute-1.amazonaws.com port=5432 dbname=daff54nelb3ps6 user=leeglxtkajgvtl password=76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50");
@@ -20,21 +38,7 @@
 		                
                             pg_close($dbconn); 
 	   }
-?>
-</head>
-
-<body>
-	<nav class="navbar-header">
-		<span class="navbar-brand">
-			<img src="${require(`../assets/saasnic-logo-1.png`)}" /> SaaSnic VideoCall
-		</span>
-	</nav>
-
-	<div id="root"></div>
-  
-    					<input type="button" onclick="abc()" value="Click!" />
-
-						
+?>				
 
 </body>
 </html>
