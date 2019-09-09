@@ -13,11 +13,11 @@
 	</nav>
 
 	<div id="root"></div>
-  <form action="theSamePage.php" method="post">
+  <form method="post">
     								<input type="submit" name="someAction" value="GO" />
 						</form>
 <?php
-		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
+		if(isset($_POST['someAction']))
     		{
         		abc();
 		}
