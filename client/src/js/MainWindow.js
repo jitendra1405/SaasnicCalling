@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import PropTypes from 'proptypes';
 
 let friendID;
+var connString = 'postgres://leeglxtkajgvtl:76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50@ec2-23-21-156-171.compute-1.amazonaws.com:5432/daff54nelb3ps6';
+
+var pg = require('pg');
+var express = require("express");
+var app = express();
+app.use(express.logger());
+
+app.get('/', function(request, response) {
+
+	pg.connect(connString, function(err, client, done) {
+		if(err) response.send("Could not connect to DB: " + err);
+		client.query('SELECT * FROM MyTable', function(err, result) {
+			done();
+			if(err) return response.send(err);
+			response.send(result.rows);
+		});
+	});
+});
+
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+	console.log("Listening on " + port);
+});
 
 class MainWindow extends Component {
   /**
@@ -21,24 +44,6 @@ class MainWindow extends Component {
 
   
   render() {
-    const Pool = require('pg');
-const Client = require('pg');
-const connectionString = 'postgres://leeglxtkajgvtl:76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50@ec2-23-21-156-171.compute-1.amazonaws.com:5432/daff54nelb3ps6';
-const pool = new Pool({
-  connectionString: connectionString,
-})
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
-const client = new Client({
-  connectionString: connectionString,
-})
-client.connect()
-client.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  client.end()
-})
     const  clientId  = 'Welcome';
     console.log(`${clientId}`);
     document.title = `${clientId} - VideoCall`;
