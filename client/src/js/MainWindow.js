@@ -18,25 +18,17 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
-const  Pool  = require('pg');
-const Client = require('pg');
+const { Pool, Client } = require('pg')
+const connectionString = 'postgres://leeglxtkajgvtl:76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50@ec2-23-21-156-171.compute-1.amazonaws.com:5432/daff54nelb3ps6';
 const pool = new Pool({
-  user: 'leeglxtkajgvtl',
-  host: 'ec2-23-21-156-171.compute-1.amazonaws.com',
-  database: 'daff54nelb3ps6',
-  password: '76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50',
-  port: 5432,
+  connectionString: connectionString,
 })
-pool.query('SELECT email,lastname FROM webrtc.contact', (err, res) => {
+pool.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
   pool.end()
 })
 const client = new Client({
-  user: 'dbuser',
-  host: 'database.server.com',
-  database: 'mydb',
-  password: 'secretpassword',
-  port: 3211,
+  connectionString: connectionString,
 })
 client.connect()
 client.query('SELECT NOW()', (err, res) => {
