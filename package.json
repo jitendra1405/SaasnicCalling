@@ -1,12 +1,15 @@
 {
   "name": "react-videocall",
+  "name": "iso-react-docker",
   "version": "1.0.0",
   "description": "React VideoCall App",
+  "main": "index.html",
   "scripts": {
     "start": "cd server && node main.js",
     "watch:server": "nodemon server/main.js",
     "watch:client": "webpack-dev-server --config client/webpack-dev.config.js",
-    "build": "cd client && webpack --config webpack-prod.config.js"
+    "build": "cd client && webpack --config webpack-prod.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@babel/core": "7.5.5",
@@ -36,7 +39,13 @@
     "url-loader": "2.1.0",
     "webpack": "4.39.2",
     "webpack-cli": "3.3.7",
-    "webrtc-adapter": "6.2.1"
+    "webrtc-adapter": "6.2.1",
+    "aws-sdk": "^2.4.9",
+    "ejs": "^2.4.2",
+    "express": "~4.13.4",
+    "newrelic": "^1.26.2",
+    "pg": "6.0.1",
+    "sleep": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "5.16.0",
@@ -51,6 +60,7 @@
   "engines": {
     "node": "10.16.3",
     "yarn": "1.17.3"
+   
   },
   "repository": {
     "type": "git",
