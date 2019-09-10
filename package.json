@@ -2,6 +2,7 @@
   "name": "react-videocall",
   "version": "1.0.0",
   "description": "React VideoCall App",
+  "pg": "2.x",
   "scripts": {
     "start": "cd server && node main.js",
     "watch:server": "nodemon server/main.js",
