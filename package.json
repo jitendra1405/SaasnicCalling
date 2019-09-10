@@ -2,8 +2,6 @@
   "name": "react-videocall",
   "version": "1.0.0",
   "description": "React VideoCall App",
-  "pg": "2.x",
-  "express": "3.1.x",
   "scripts": {
     "start": "cd server && node main.js",
     "watch:server": "nodemon server/main.js",
@@ -14,8 +12,6 @@
     "@babel/core": "7.5.5",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
-    "pg": "2.x",
-    "express": "3.1.x",
     "babel-loader": "8.0.6",
     "bluebird": "3.5.5",
     "bootstrap-sass": "3.4.1",
@@ -55,12 +51,11 @@
   "engines": {
     "node": "10.16.3",
     "yarn": "1.17.3"
-    
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jitendra1405/webrtcnewapp.git"
+    "url": "git+https://github.com/nguymin4/react-videocall.git"
   },
-  "author": "Jitendra Nagar",
+  "author": "Minh Son Nguyen",
   "license": "MIT"
 }
