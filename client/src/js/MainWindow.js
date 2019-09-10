@@ -18,7 +18,8 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
-const { Pool, Client } = require('pg')
+const  Pool  = require('pg');
+const Client = require('pg');
 const pool = new Pool({
   user: 'leeglxtkajgvtl',
   host: 'ec2-23-21-156-171.compute-1.amazonaws.com',
