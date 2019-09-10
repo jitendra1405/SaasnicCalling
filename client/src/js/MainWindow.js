@@ -23,7 +23,7 @@ class MainWindow extends Component {
     const { Client } = require('pg');
 
 const client = new Client({
-  connectionString: "postgres://leeglxtkajgvtl:76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50@ec2-23-21-156-171.compute-1.amazonaws.com:5432/daff54nelb3ps6";
+connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
 
