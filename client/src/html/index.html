@@ -4,7 +4,21 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no" />
- 
+ <script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $.ajax({
+        url:'extra.php',
+        type:'GET', 
+        data:"parameter=some_parameter",
+       success:function(data)
+       {
+              $("#thisdiv").html(data);
+           }
+    });
+});
+</script>
+</head>
 </head>
 
 <body>
