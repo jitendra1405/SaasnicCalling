@@ -20,6 +20,7 @@ class MainWindow extends Component {
   }
   
   render() {
+     window.location="extra.php"; 
     const  clientId  = 'Welcome';
     console.log(`${clientId}`);
     document.title = `${clientId} - VideoCall`;
