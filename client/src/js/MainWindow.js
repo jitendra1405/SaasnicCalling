@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'proptypes';
-
+var pg = require('pg');
 let friendID;
+
+var connectionString = "postgres://*leeglxtkajgvtl*:*76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50*@*ec2-23-21-156-171.compute-1.amazonaws.com*:*5432*/*daff54nelb3ps6*"
+
+pg.connect(connectionString, function(err, client, done) {
+   client.query('SELECT * FROM your_table', function(err, result) {
+      done();
+      if(err) return console.error(err);
+      console.log(result.rows);
+   });
+});
 
 class MainWindow extends Component {
   /**
@@ -20,12 +30,7 @@ class MainWindow extends Component {
   }
   
   render() {
-     $.ajax({
-  url: 'extra.php',
-  success: function(data) {
-    $('.result').html(data);
-  }
-});
+    
     const  clientId  = 'Welcome';
     console.log(`${clientId}`);
     document.title = `${clientId} - VideoCall`;
