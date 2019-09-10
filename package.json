@@ -56,8 +56,7 @@
     "type": "git",
     "url": "git+https://github.com/nguymin4/react-videocall.git"
   },
-  "author": "Minh Son Nguyen",
-  "license": "MIT",
+ 
   {
   "name": "node-example",
   "version": "0.0.1",
@@ -70,7 +69,8 @@
     "npm": "1.2.x"
   }
 }
-  
+ "author": "Minh Son Nguyen",
+  "license": "MIT",  
   
   
 }
