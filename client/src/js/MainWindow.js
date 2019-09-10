@@ -21,7 +21,7 @@ class MainWindow extends Component {
 
   
   render() {
-    const  clientId  = 'Welcome';
+    const  clientId  = this.props;
     console.log(`${clientId}`);
     document.title = `${clientId} - VideoCall`;
     return (
