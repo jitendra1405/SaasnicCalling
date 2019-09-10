@@ -14,9 +14,12 @@
 	</nav>
 
 	<div id="root"></div>
-  <form action="./client/src/html/test.php">
-  <input type="submit" value="click on me!">
-</form>
- 
+  <button onclick="myFunction()">Replace document</button>
+
+<script>
+function myFunction() {
+  location.replace("${require(`../html/test.php`)}"")
+}
+</script>
 </body>
 </html>
