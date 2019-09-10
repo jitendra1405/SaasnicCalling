@@ -68,7 +68,7 @@
     "node": "0.10.x",
     "npm": "1.2.x"
   }
-},
+}
  "author": "Minh Son Nguyen",
   "license": "MIT"  
   
