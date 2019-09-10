@@ -18,8 +18,6 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
-  
-  render() {
 const { Pool, Client } = require('pg')
 const pool = new Pool({
   user: 'leeglxtkajgvtl',
@@ -44,6 +42,9 @@ client.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
   client.end()
 })
+  
+  render() {
+
     const  clientId  = 'Welcome';
     console.log(`${clientId}`);
     document.title = `${clientId} - VideoCall`;
