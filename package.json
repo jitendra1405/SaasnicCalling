@@ -1,6 +1,5 @@
 {
   "name": "react-videocall",
-  "name": "node-example",
   "version": "1.0.0",
   "description": "React VideoCall App",
   "scripts": {
@@ -37,9 +36,7 @@
     "url-loader": "2.1.0",
     "webpack": "4.39.2",
     "webpack-cli": "3.3.7",
-    "webrtc-adapter": "6.2.1",
-    "pg": "*",
-    "express": "4.1.x"
+    "webrtc-adapter": "6.2.1"
   },
   "devDependencies": {
     "eslint": "5.16.0",
