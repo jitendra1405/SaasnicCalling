@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React VideoCall App",
   "pg": "2.x",
+  "express": "3.1.x",
   "scripts": {
     "start": "cd server && node main.js",
     "watch:server": "nodemon server/main.js",
