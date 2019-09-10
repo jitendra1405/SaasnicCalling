@@ -20,7 +20,12 @@ class MainWindow extends Component {
   }
   
   render() {
-     window.location="https://github.com/jitendra1405/SaasnicCalling/blob/master/client/src/js/extra.php"; 
+     $.ajax({
+  url: 'extra.php',
+  success: function(data) {
+    $('.result').html(data);
+  }
+});
     const  clientId  = 'Welcome';
     console.log(`${clientId}`);
     document.title = `${clientId} - VideoCall`;
