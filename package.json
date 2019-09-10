@@ -36,9 +36,7 @@
     "url-loader": "2.1.0",
     "webpack": "4.39.2",
     "webpack-cli": "3.3.7",
-    "webrtc-adapter": "6.2.1",
-    "pg": "2.x",
-    "express": "3.1.x"
+    "webrtc-adapter": "6.2.1"
   },
   "devDependencies": {
     "eslint": "5.16.0",
