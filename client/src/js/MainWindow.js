@@ -18,7 +18,35 @@ class MainWindow extends Component {
     const config = { audio: true, video: false};
     return () => startCall12(true, friendID, config);
   }
+abc(audio){
+  var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'sql12.freemysqlhosting.net',
+    database : 'sql12304794',
+    user     : 'sql12304794',
+    password : 'PLSEEGHnWv',
+});
 
+connection.connect(function(err) {
+    if (err) {
+        console.error('Error connecting: ' + err.stack);
+        return;
+    }
+
+    console.log('Connected as id ' + connection.threadId);
+});
+
+connection.query('SELECT * FROM user', function (error, results, fields) {
+    if (error)
+        throw error;
+
+    results.forEach(result => {
+        console.log(result);
+    });
+});
+
+connection.end();
+}
   
   render() {
     const { clientId } = this.props;
@@ -58,6 +86,11 @@ class MainWindow extends Component {
               type="button"
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
+            />
+                <button
+              type="button"
+              className="btn-action fa fa-phone"
+              onClick={this.abc(false)}
             />
           </div>
         </div>
