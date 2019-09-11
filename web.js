@@ -1,27 +1,52 @@
- var mysql      = require('mysql');
-var connection = mysql.createConnection({
+var express = require("express");
+var mysql = require('mysql');
+var app = express();
+app.use(express.logger());
+
+var db_config = {
     host     : 'sql12.freemysqlhosting.net',
     database : 'sql12304794',
     user     : 'sql12304794',
-    password : 'PLSEEGHnWv',
-});
+    password : 'PLSEEGHnWv'
+};
 
-connection.connect(function(err) {
-    if (err) {
-        console.error('Error connecting: ' + err.stack);
-        return;
-    }
+var connection;
 
-    console.log('Connected as id ' + connection.threadId);
-});
+function handleDisconnect() {
+    console.log('1. connecting to db:');
+    connection = mysql.createConnection(db_config); // Recreate the connection, since
+													// the old one cannot be reused.
 
-connection.query('SELECT * FROM user', function (error, results, fields) {
-    if (error)
-        throw error;
+    connection.connect(function(err) {              	// The server is either down
+        if (err) {                                     // or restarting (takes a while sometimes).
+            console.log('2. error when connecting to db:', err);
+            setTimeout(handleDisconnect, 1000); // We introduce a delay before attempting to reconnect,
+        }                                     	// to avoid a hot loop, and to allow our node script to
+    });                                     	// process asynchronous requests in the meantime.
+    											// If you're also serving http, display a 503 error.
+    connection.on('error', function(err) {
+        console.log('3. db error', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 	// Connection to the MySQL server is usually
+            handleDisconnect();                      	// lost due to either server restart, or a
+        } else {                                      	// connnection idle timeout (the wait_timeout
+            throw err;                                  // server variable configures this)
+        }
+    });
+}
 
-    results.forEach(result => {
-        console.log(result);
+handleDisconnect();
+
+app.get('/', function(request, response) {
+    connection.query('SELECT * from user', function(err, rows, fields) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+        response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
     });
 });
 
-connection.end();
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+    console.log("Listening on " + port);
+});
