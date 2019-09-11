@@ -59,6 +59,14 @@
     "type": "git",
     "url": "git+https://github.com/nguymin4/react-videocall.git"
   },
+  "browser": {
+    "http": false,
+    "https":false,
+    "net": false,
+    "path": false,
+    "stream": false,
+    "tls": false
+},
   "author": "Minh Son Nguyen",
   "license": "MIT"
 }
