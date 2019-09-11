@@ -11,7 +11,8 @@
     "start": "ng serve",
     "build": "node patch.js && ng build",
     "build-prod": "node patch.js && ng build --configuration=production",
-    "build-staging": "node patch.js && ng build --configuration=staging"
+    "build-staging": "node patch.js && ng build --configuration=staging",
+    "node": "10.16.3"
   },
   "dependencies": {
     "@babel/core": "7.5.5",
