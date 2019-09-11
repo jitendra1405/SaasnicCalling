@@ -6,13 +6,8 @@
     "start": "cd server && node main.js",
     "watch:server": "nodemon server/main.js",
     "watch:client": "webpack-dev-server --config client/webpack-dev.config.js",
-    "build": "cd client && webpack --config webpack-prod.config.js",
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "node patch.js && ng build",
-    "build-prod": "node patch.js && ng build --configuration=production",
-    "build-staging": "node patch.js && ng build --configuration=staging",
-    "node": "10.16.3"
+    "build": "cd client && webpack --config webpack-prod.config.js"
+    
   },
   "dependencies": {
     "@babel/core": "7.5.5",
@@ -43,7 +38,7 @@
     "webpack-cli": "3.3.7",
     "webrtc-adapter": "6.2.1",
     "express": "4.14.0",
-    "pg": "6.0.1"
+   
     
   },
   "devDependencies": {
