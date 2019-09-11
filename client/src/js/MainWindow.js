@@ -59,11 +59,7 @@ class MainWindow extends Component {
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
             />
-                <button
-              type="button"
-              className="btn-action fa fa-phone"
-              onClick={this.abc(false)}
-            />
+                
           </div>
         </div>
       </div>
