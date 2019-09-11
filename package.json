@@ -6,7 +6,12 @@
     "start": "cd server && node main.js",
     "watch:server": "nodemon server/main.js",
     "watch:client": "webpack-dev-server --config client/webpack-dev.config.js",
-    "build": "cd client && webpack --config webpack-prod.config.js"
+    "build": "cd client && webpack --config webpack-prod.config.js",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "node patch.js && ng build",
+    "build-prod": "node patch.js && ng build --configuration=production",
+    "build-staging": "node patch.js && ng build --configuration=staging"
   },
   "dependencies": {
     "@babel/core": "7.5.5",
