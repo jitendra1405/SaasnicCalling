@@ -7,6 +7,23 @@ import CallWindow from './CallWindow';
 
 function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
   console.log('theriiii',status,rejectCall);
+  var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "sql12.freemysqlhosting.net",
+  user: "sql12304794",
+  password: "PLSEEGHnWv",
+  database: "sql12304794"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  //Select all customers and return the result object:
+  con.query("SELECT * FROM user", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
   var audio = new Audio('http://hipehome.com/nokia-ringtone-2019-256k-46684.mp3');
   if(status == " "){
      audio.pause();
