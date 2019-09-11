@@ -3,9 +3,6 @@ import PropTypes from 'proptypes';
 
 let friendID;
 const queryDB = require("../queryDB.js");
-const queryDB = require("../queryDB.js");
-
-
 let query = "SELECT * FROM webrtc.contact;"
 queryDB.query(query, (err, results) => {
     console.log('ppppppppppppppppppppppppppppppppppppppp',results);
