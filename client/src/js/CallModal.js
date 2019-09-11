@@ -7,31 +7,7 @@ import CallWindow from './CallWindow';
 
 function CallModal({ status, callFrom, startCall,startCall12, rejectCall }) {
   console.log('theriiii',status,rejectCall);
-  var express = require("express");
-var app = express();
-app.use(express.logger());
-
-app.get('/', function(request, response) {
-  response.send('Hello World!');
-  console.log("hello roland");
-});
-
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
-
-var pg = require('pg');
-
-var connectionString = "postgres://leeglxtkajgvtl:76f29beea03eb3bd5b69672f0d292a01ae95d251957282df96e882864c969e50@ec2-23-21-156-171.compute-1.amazonaws.com:5432/daff54nelb3ps6";
-
-pg.connect(connectionString, function(err, client, done) {
-   client.query('SELECT email,lastname FROM webrtc.contact', function(err, result) {
-      done();
-      if(err) return console.error(err);
-      console.log(result.rows);
-   });
-});
+ 
   var audio = new Audio('http://hipehome.com/nokia-ringtone-2019-256k-46684.mp3');
   if(status == " "){
      audio.pause();
