@@ -4,27 +4,7 @@ import classnames from 'classnames';
 import _ from 'lodash';
 import  endcall  from './app.js'; 
 
-const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-client.query('SELECT * FROM webrtc.contact;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
-
-
-
-
- var endTime = new Date().setTime(1362009600000);
+var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
 var remainingTime = endTime - currentTime;
 //var mins = 5;
